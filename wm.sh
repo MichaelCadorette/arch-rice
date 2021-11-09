@@ -59,9 +59,3 @@ echo -e "~/.dwm/autostart.sh &\nexec dwm" > ~/.xinitrc
 
 echo ::Rebooting
 sudo reboot
-
-#
-#	Notes
-#
-
-#check script running multiple times
