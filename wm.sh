@@ -5,20 +5,30 @@ if [ "$(id -u)" = 0 ]; then
 	exit 1
 fi
 
+echo ###############################
+echo #    UPDATING REPOSITORIES    #
+echo ###############################
 sudo pacman -Sy
+echo #################################
+echo #    INSTALLING DEPENDENCIES    #
+echo #################################
 sudo pacman -S --noconfirm --needed git base-devel xorg xorg-xinit vim ttf-font-awesome noto-fonts picom lxsession feh xautolock
 
 [[ -f ~/.cdos_install ]] || mkdir ~/.cdos_install
 
 #install pfetch (simpler neofetch)
-echo ::Installing pfetch
+echo ###########################
+echo #    INSTALLING PFETCH    #
+echo ###########################
 cd ~/.cdos_install
 git clone https://aur.archlinux.org/pfetch.git
 cd pfetch
 makepkg -si
 
 #install dwm
-echo ::Installing dwm
+echo ########################
+echo #    INSTALLING DWM    #
+echo ########################
 cd ~/.cdos_install
 git clone https://github.com/checcdev/dwm
 cd dwm
@@ -29,33 +39,45 @@ chmod +x dwmbar.sh ; cp dwmbar.sh ~/.dwm
 cp wallpaper.png ~/.dwm
 
 #install st
-echo ::Installing st
+echo #######################
+echo #    INSTALLING ST    #
+echo #######################
 cd ~/.cdos_install
 git clone https://github.com/checcdev/st
 cd st
 sudo make clean install
 
 #will exec startx automatically if in tty1
-echo ::Configuring bashrc
+echo ############################
+echo #    CONFIGURING BASHRC    #
+echo ############################
 cat ~/.cdos_install/st/.bashrc > ~/.bashrc
 
 #install dmenu
-echo ::Installing dmenu
+echo ##########################
+echo #    INSTALLING DMENU    #
+echo ##########################
 cd ~/.cdos_install
 git clone https://github.com/checcdev/dmenu
 cd dmenu 
 sudo make clean install
 
 #install slock (simple x locker)
-echo ::Installing slock
+echo ##########################
+echo #    INSTALLING SLOCK    #
+echo ##########################
 cd ~/.cdos_install
 git clone https://github.com/checcdev/slock
 cd slock
 sudo make clean install
 
 #startx will start dwm
-echo ::Configuring xinitrc to start dwm
+echo ############################
+echo #    CONFIGURING BASHRC    #
+echo ############################
 echo -e "~/.dwm/autostart.sh &\nexec dwm" > ~/.xinitrc
 
-echo ::Rebooting
+echo ###################
+echo #    REBOOTING    #
+echo ###################
 sudo reboot
