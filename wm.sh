@@ -9,12 +9,26 @@ echo ###############################
 echo #    UPDATING REPOSITORIES    #
 echo ###############################
 sudo pacman -Sy
+
 echo #################################
 echo #    INSTALLING DEPENDENCIES    #
 echo #################################
 sudo pacman -S --noconfirm --needed git base-devel xorg xorg-xinit vim ttf-font-awesome noto-fonts picom lxsession feh xautolock
 
+#create cdos install directory 
 [[ -f ~/.cdos_install ]] || mkdir ~/.cdos_install
+
+#moving dwm config files into their appropriate directories
+[[ -f ~/.dwm ]] || mkdir ~/.dwm
+chmod +x autostart.sh ; cp autostart.sh ~/.dwm
+chmod +x dwmbar.sh ; cp dwmbar.sh ~/.dwm
+cp wallpaper.png ~/.dwm
+
+#will exec startx automatically if in tty1
+echo ############################
+echo #    CONFIGURING BASHRC    #
+echo ############################
+cat ~/.cdos_install/st/.bashrc > ~/.bashrc
 
 #install pfetch (simpler neofetch)
 echo ###########################
@@ -33,10 +47,6 @@ cd ~/.cdos_install
 git clone https://github.com/checcdev/dwm
 cd dwm
 sudo make clean install
-[[ -f ~/.dwm ]] || mkdir ~/.dwm
-chmod +x autostart.sh ; cp autostart.sh ~/.dwm
-chmod +x dwmbar.sh ; cp dwmbar.sh ~/.dwm
-cp wallpaper.png ~/.dwm
 
 #install st
 echo #######################
@@ -46,12 +56,6 @@ cd ~/.cdos_install
 git clone https://github.com/checcdev/st
 cd st
 sudo make clean install
-
-#will exec startx automatically if in tty1
-echo ############################
-echo #    CONFIGURING BASHRC    #
-echo ############################
-cat ~/.cdos_install/st/.bashrc > ~/.bashrc
 
 #install dmenu
 echo ##########################
@@ -71,10 +75,10 @@ git clone https://github.com/checcdev/slock
 cd slock
 sudo make clean install
 
-#startx will start dwm
-echo ############################
-echo #    CONFIGURING BASHRC    #
-echo ############################
+#configuring xinitrc to start dwm
+echo #############################
+echo #    CONFIGURING XINITRC    #
+echo #############################
 echo -e "~/.dwm/autostart.sh &\nexec dwm" > ~/.xinitrc
 
 echo ###################
