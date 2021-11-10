@@ -24,7 +24,11 @@ chmod +x autostart.sh ; cp autostart.sh ~/.dwm
 chmod +x dwmbar.sh ; cp dwmbar.sh ~/.dwm
 cp wallpaper.png ~/.dwm
 
-cdosdir="$(pwd)"
+#will exec startx automatically if in tty1
+echo ############################
+echo #    CONFIGURING BASHRC    #
+echo ############################
+cat .bashrc > ~/.bashrc
 
 #install pfetch (simpler neofetch)
 echo ###########################
@@ -70,13 +74,6 @@ cd ~/.cdos_install
 git clone https://github.com/checcdev/slock
 cd slock
 sudo make clean install
-
-#will exec startx automatically if in tty1
-echo ############################
-echo #    CONFIGURING BASHRC    #
-echo ############################
-cd $cdosdir
-cat .bashrc > ~/.bashrc
 
 #configuring xinitrc to start dwm
 echo #############################
