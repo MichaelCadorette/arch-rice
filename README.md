@@ -1,4 +1,4 @@
-![icon.png](./icon.png "icon")
+![icon.jpeg](./icon.jpg "icon")
 # cdos 
 script to install my window manager and shit
 
