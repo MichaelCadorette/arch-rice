@@ -28,7 +28,7 @@ cp wallpaper.png ~/.dwm
 echo ############################
 echo #    CONFIGURING BASHRC    #
 echo ############################
-cat .bashrc ~/.bashrc
+cat .bashrc > ~/.bashrc
 
 #install pfetch (simpler neofetch)
 echo ###########################
