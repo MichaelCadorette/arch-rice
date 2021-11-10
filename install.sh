@@ -1,9 +1,7 @@
 #!/bin/sh
 
-if [ "$(id -u)" = 0 ]; then
-	echo "This script MUST NOT be run as root as it makes changes to the users home directory."
-	exit 1
-fi
+#check for root
+[ "$(id -u)" = 0 ] && echo "This script MUST NOT be run as root as it makes changes to the users home directory." ; exit 1
 
 echo ###############################
 echo #    UPDATING REPOSITORIES    #
@@ -18,7 +16,7 @@ sudo pacman -S --noconfirm --needed git base-devel xorg xorg-xinit vim ttf-font-
 #create cdos install directory 
 [[ -f ~/.cdos_install ]] || mkdir ~/.cdos_install
 
-#moving dwm config files into their appropriate directories
+#move dwm config files into their appropriate directories
 [[ -f ~/.dwm ]] || mkdir ~/.dwm
 chmod +x autostart.sh ; cp autostart.sh ~/.dwm
 chmod +x dwmbar.sh ; cp dwmbar.sh ~/.dwm
