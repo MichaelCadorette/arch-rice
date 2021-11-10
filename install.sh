@@ -30,6 +30,7 @@ echo #    CONFIGURING BASHRC    #
 echo ############################
 cat .bashrc > ~/.bashrc
 
+
 #install pfetch (simpler neofetch)
 echo ###########################
 echo #    INSTALLING PFETCH    #
@@ -47,6 +48,12 @@ cd ~/.cdos_install
 git clone https://github.com/checcdev/dwm
 cd dwm
 sudo make clean install
+
+#configuring xinitrc to start dwm
+echo #############################
+echo #    CONFIGURING XINITRC    #
+echo #############################
+echo -e "~/.dwm/autostart.sh &\nexec dwm" > ~/.xinitrc
 
 #install st
 echo #######################
@@ -74,12 +81,6 @@ cd ~/.cdos_install
 git clone https://github.com/checcdev/slock
 cd slock
 sudo make clean install
-
-#configuring xinitrc to start dwm
-echo #############################
-echo #    CONFIGURING XINITRC    #
-echo #############################
-echo -e "~/.dwm/autostart.sh &\nexec dwm" > ~/.xinitrc
 
 echo ###################
 echo #    REBOOTING    #
