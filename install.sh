@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #check for root
-[ "$(id -u)" = 0 ] && echo "This script MUST NOT be run as root as it makes changes to the users home directory." ; exit 1
+[ "$(id -u)" = 0 ] && echo "This script MUST NOT be run as root as it makes changes to the users home directory." && exit 1
 
 echo ###############################
 echo #    UPDATING REPOSITORIES    #
