@@ -21,6 +21,8 @@ sudo pacman -S --noconfirm --needed git base-devel xorg xorg-xinit vim ttf-font-
 chmod +x autostart.sh ; cp autostart.sh ~/.dwm
 chmod +x dwmbar.sh ; cp dwmbar.sh ~/.dwm
 cp wallpaper.png ~/.dwm
+[[ -f /usr/share/xsessions ]] || mkdir /usr/share/xsessions
+cp dwm.desktop /usr/share/xsessions
 
 #will exec startx automatically if in tty1
 echo ############################
