@@ -53,7 +53,7 @@ sudo make clean install
 echo "#############################"
 echo "#    CONFIGURING XINITRC    #"
 echo "#############################"
-echo -e "~/.dwm/autostart.sh &\nexec dwm" > ~/.xinitrc
+echo "exec dwm" > ~/.xinitrc
 
 #install st
 echo "#######################"
