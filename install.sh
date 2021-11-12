@@ -38,7 +38,7 @@ echo "###########################"
 cd ~/.cdos_install
 git clone https://aur.archlinux.org/pfetch.git
 cd pfetch
-makepkg -si
+makepkg -si --noconfirm
 
 #install dwm
 echo "########################"
