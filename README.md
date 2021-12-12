@@ -2,7 +2,7 @@
 # cdos 
 script to install my window manager and shit
 
-### installation
+### install
 ```
 # chmod +x install.sh && sh install.sh
 ```
