@@ -1,8 +1,8 @@
 ![icon](./icon.png "icon")
 # cdos 
-script to install my window manager and shit
+script to install my window manager and stuff
 
 ### install
 ```
-# chmod +x install.sh && sh install.sh
+# sh install.sh
 ```
