@@ -18,7 +18,10 @@ while :; do
 	# Keep this as last for our next read
 	cpu_last=("${cpu_now[@]}")
 	cpu_last_sum=$cpu_sum
-
+	
+	# Exit if dwm is not running
+	[[ -z $(pgrep dwm) ]] && exit 1
+	
 	xsetroot -name "|  $(echo $cpu_usage)% |  $(date '+%Y %b %d (%a) %I:%M%p') "
 	sleep 5s
 done
