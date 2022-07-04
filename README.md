@@ -4,5 +4,5 @@ script to install my forks of window managers and stuff
 
 ### install
 ```
-# sh install.sh
+$ sh install.sh
 ```
