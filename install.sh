@@ -13,8 +13,8 @@ echo "#    INSTALLING DEPENDENCIES    #"
 echo "#################################"
 sudo pacman -S --noconfirm --needed git base-devel xorg xorg-xinit vim ttf-font-awesome noto-fonts picom lxsession feh xautolock
 
-#create cdos install directory
-[[ -f ~/.cdos_install ]] || mkdir ~/.cdos_install
+#create arch-rice install directory
+[[ -f ~/.rice_install ]] || mkdir ~/.rice_install
 
 #move dwm config files into their appropriate directories
 [[ -f ~/.dwm ]] || mkdir ~/.dwm
@@ -35,7 +35,7 @@ cat .bashrc > ~/.bashrc
 echo "###########################"
 echo "#    INSTALLING PFETCH    #"
 echo "###########################"
-cd ~/.cdos_install
+cd ~/.rice_install
 git clone https://aur.archlinux.org/pfetch.git
 cd pfetch
 makepkg -si --noconfirm
@@ -44,7 +44,7 @@ makepkg -si --noconfirm
 echo "########################"
 echo "#    INSTALLING DWM    #"
 echo "########################"
-cd ~/.cdos_install
+cd ~/.rice_install
 git clone https://github.com/MichaelCadorette/dwm
 cd dwm
 sudo make clean install
@@ -59,7 +59,7 @@ echo "exec dwm" > ~/.xinitrc
 echo "#######################"
 echo "#    INSTALLING ST    #"
 echo "#######################"
-cd ~/.cdos_install
+cd ~/.rice_install
 git clone https://github.com/MichaelCadorette/st
 cd st
 sudo make clean install
@@ -68,7 +68,7 @@ sudo make clean install
 echo "##########################"
 echo "#    INSTALLING DMENU    #"
 echo "##########################"
-cd ~/.cdos_install
+cd ~/.rice_install
 git clone https://github.com/MichaelCadorette/dmenu
 cd dmenu
 sudo make clean install
@@ -77,7 +77,7 @@ sudo make clean install
 echo "##########################"
 echo "#    INSTALLING SLOCK    #"
 echo "##########################"
-cd ~/.cdos_install
+cd ~/.rice_install
 git clone https://github.com/MichaelCadorette/slock
 cd slock
 sudo make clean install
