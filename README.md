@@ -1,5 +1,5 @@
 ![icon](./icon.png "icon")
-# cdos 
+# arch-rice
 script to install my window manager and stuff
 
 ### install
